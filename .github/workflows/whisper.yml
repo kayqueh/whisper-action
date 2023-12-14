@@ -6,7 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Preparar ambiente
+      - name: Baixar o audio
         run: |
           git clone -b main https://github.com/kayqueh/whisper-action.git ${{ github.workspace }}
-          ls
+      - name: Instalar
+        run: |
+          pip install -U openai-whisper
+      - name: Executar
+        run: |
+          whisper whisper.mp3 --model medium
