@@ -10,5 +10,6 @@ jobs:
         run: |
           git clone -b main https://github.com/kayqueh/whisper-action.git ${{ github.workspace }}
           cd /home/runner/work/whisper-action/whisper-action/
+          sudo apt update && sudo apt install ffmpeg -y
           pip install -U openai-whisper
           whisper whisper.mp3 --model medium
