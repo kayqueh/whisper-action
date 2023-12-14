@@ -9,3 +9,5 @@ jobs:
       - name: Preparar ambiente
         run: |
           pip install -U openai-whisper
+          git clone -b main https://github.com/kayqueh/whisper-action.git ${{ github.workspace }}
+          whisper whisper.mp3 --model medium
