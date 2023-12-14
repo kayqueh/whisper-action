@@ -9,6 +9,6 @@ jobs:
       - name: Baixar o audio
         run: |
           git clone -b main https://github.com/kayqueh/whisper-action.git ${{ github.workspace }}
-          cd whisper
+          cd /home/runner/work/whisper-action/whisper-action/whisper
           pip install -U openai-whisper
           whisper whisper.mp3 --model medium
