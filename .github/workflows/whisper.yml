@@ -25,4 +25,4 @@ jobs:
 
     - name: Run Whisper
       run: |
-        whisper whisper2.mp3 --model medium
+        whisper whisper.mp3 --fp16 false
