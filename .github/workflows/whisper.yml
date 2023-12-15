@@ -25,4 +25,4 @@ jobs:
 
     - name: Run Whisper
       run: |
-        whisper whisper.mp3 --fp16 false
+        whisper whisper.mp3
