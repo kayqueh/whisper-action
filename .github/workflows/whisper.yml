@@ -21,7 +21,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install whisper
+        pip install -U openai-whisper
 
     - name: Run Whisper
       run: |
