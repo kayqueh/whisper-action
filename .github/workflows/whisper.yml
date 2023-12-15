@@ -6,10 +6,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Baixar o audio
-        run: |
-          git clone -b main https://github.com/kayqueh/whisper-action.git ${{ github.workspace }}
-          cd /home/runner/work/whisper-action/whisper-action/
-          sudo apt update && sudo apt install ffmpeg -y
-          pip install -U openai-whisper
-          whisper whisper.mp3 --model medium
+
+    - name: Run Whisper
+      run: |
+        git clone -b main https://github.com/kayqueh/whisper-action.git ${{ github.workspace }}
+        cd /home/runner/work/whisper-action/whisper-action/
+        sudo apt update
+        sudo apt install ffmpeg -y
+    
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        pip install whisper
+
+    - name: Run Whisper
+      run: |
+        whisper whisper.mp3 --model medium
