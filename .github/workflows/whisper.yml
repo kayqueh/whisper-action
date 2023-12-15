@@ -25,4 +25,4 @@ jobs:
 
     - name: Run Whisper
       run: |
-        whisper whisper.mp3 --model medium
+        whisper whisper2.mp3 --model medium
